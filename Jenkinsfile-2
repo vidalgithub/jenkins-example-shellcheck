@@ -1,5 +1,11 @@
 pipeline {
   agent any
+  triggers {
+    upstream 'sonarqube-pipeline-demo, '
+  }
+  options {
+    quietPeriod 30
+  }
 
   stages {
     stage('Process') {
